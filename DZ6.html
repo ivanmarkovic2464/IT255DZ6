@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$.ajax({
+url: "https://jsonplaceholder.typicode.com/comments/2?",
+type: "GET",
+success: function(html){
+
+var obj = html;
+$("#broj").append("Broj: " + obj.id);
+$("#ime").append("Ime: " + obj.name);
+$("#mejl").append("Mejl: " + obj.email);
+$("#telo").append("Tekst: " + obj.body);
+}
+});
+});
+</script>
+</head>
+<body>
+<div id="broj"></div>
+<div id="ime"></div>
+<div id="mejl"></div>
+<div id="telo"></div>
+</body>
+</html>
